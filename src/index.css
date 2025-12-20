@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@theme {
+  --color-primary: #c0754d;
+  --color-secondary: rgb(255, 246, 242);
+  --color-accent: rgb(255, 122, 27);
+  --color-text-primary: #111111;
+  --color-text-secondary: #6e6e73;
+  --color-bg-secondary: #c0754d;
+  --font-display: "Inter", sans-serif;
+}
+
+body {
+  color: #333; /* default text color */
+  overflow-x: hidden;
+  background-color: #a78bfa;font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@layer utilities {
+  .btn-primary {
+    @apply bg-pink-600 text-white rounded-xl  px-[22px] py-2 font-medium hover:bg-[#4646463f] backdrop-blur-lg active:scale-95 transition duration-300;
+  }
+  .btn-secondary {
+    @apply text-primary rounded-full px-[22px] py-2 font-medium hover:bg-secondary active:scale-95 transition duration-300;
+  }
+  .btn-outline {
+    @apply border-[#FFFFFF4D] backdrop-blur-lg border hover:border-[#46464667] rounded-full px-5.5 max-w-sm py-2 hover:bg-[#4646463f] active:scale-95 transition duration-300;
+  }
+  .card {
+    @apply bg-white rounded-xl overflow-hidden hover:shadow-lg transition shadow-sm;
+  }
+  .bg-black {
+    background-color: #c0754d4d;
+  }
+  .eyebrow {
+    @apply bg-[#F0F2FF] py-1 text-primary px-4 text-[14px] font-display leading-[100%] tracking-[0px] flex justify-center items-center rounded-full w-[229px];
+  }
+  .navbar {
+    @apply h-[94px] flex justify-between items-center pt-[32px] pb-[24px] opacity-100;
+  }
+  .nav-link {
+    @apply text-[16px] flex gap-2 text-[15px] font-extralight leading-[24px] text-text-primary hover:text-primary transition;
+  }
+  .hero {
+    @apply relative flex flex-col justify-center items-center min-h-screen text-white bg-[url('/images/IMG_6864.png')] bg-cover bg-center px-6 py-20 md:px-10 lg:px-20 overflow-hidden;
+  }
+  .hero .content-left {
+    @apply group-hover:scale-110 transition-all duration-300 delay-100;
+  }
+  .hero .blur-overlay {
+    @apply group-hover:backdrop-blur-2xl group-hover:bg-black/60 transition-all duration-300;
+  }
+  .mainsection {
+    @apply w-screen flex flex-col justify-center items-center max-w-6xl mx-auto px-6 py-20 md:px-10 lg:px-20 overflow-hidden;
+  }
+  .img-div {
+    @apply transition-all duration-300 ease-in-out will-change-transform;
+  }
+
+  .img-div:hover {
+    @apply transform scale-105 shadow-2xl -translate-y-1 hover:scale-105 transition-transform duration-500 ease-out will-change-transform;
+  }
+}
